@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketLOption | Smart Trading Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            color-scheme: dark;
+            color: #ffffff;
+        }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0B1020 0%, #111827 50%, #1E3A8A 100%);
+            color: #ffffff;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+        .glass-panel {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.12);
+            backdrop-filter: blur(20px);
+        }
+        .shadow-glow-blue {
+            box-shadow: 0 16px 40px rgba(59,130,246,0.18);
+        }
+        .shadow-glow-green {
+            box-shadow: 0 16px 40px rgba(34,197,94,0.16);
+        }
+        .link-underline {
+            background-image: linear-gradient(90deg, rgba(59,130,246,0.35), rgba(6,182,212,0.35));
+            background-repeat: no-repeat;
+            background-size: 100% 0.14em;
+            background-position: 0 100%;
+        }
+        input[type="text"], input[type="email"], input[type="password"], select {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <div class="relative">
+        <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-r from-blue-600/20 via-cyan-500/10 to-sky-400/10 blur-3xl"></div>
+        <header class="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-6 py-5 sm:px-8">
+            <div class="flex items-center gap-3">
+                <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-600 text-lg font-black shadow-glow-blue">P</div>
+                <div>
+                    <p class="text-sm font-semibold tracking-[0.18em] text-sky-300 uppercase">PocketLOption</p>
+                    <p class="text-xs text-slate-400">Smart trading for modern investors</p>
+                </div>
+            </div>
+            <div class="hidden items-center gap-4 md:flex">
+                <button class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 transition hover:bg-white/10">Login</button>
+                <button class="rounded-full bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-cyan-400">Register</button>
+                <div class="rounded-full bg-white/5 px-3 py-2 text-sm text-slate-300">EN</div>
+                <div class="rounded-full bg-white/5 px-3 py-2 text-sm text-slate-300">US</div>
+            </div>
+        </header>
+
+        <main class="relative z-20 mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-10 sm:px-8 lg:grid-cols-[1.2fr_0.9fr] lg:pb-32">
+            <section class="space-y-8">
+                <div class="max-w-2xl space-y-5">
+                    <div class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.24em] text-sky-300 shadow-glow-blue">
+                        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                        100+ assets · $5 minimum deposit · demo balance available
+                    </div>
+                    <div class="space-y-4">
+                        <h1 class="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">Trade smarter with PocketLOption — fast, secure, and beginner-friendly.</h1>
+                        <p class="max-w-xl text-lg leading-8 text-slate-300">Launch your trading journey with a demo account, explore 100+ global assets, and access live charts with real-time simulation and professional tools.</p>
+                    </div>
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+                        <a href="#register" class="inline-flex items-center justify-center rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-400">Start Demo Trading</a>
+                        <a href="#dashboard-preview" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm text-slate-200 transition hover:border-sky-300">Dashboard Preview</a>
+                    </div>
+                    <div class="grid gap-3 sm:grid-cols-3">
+                        <div class="rounded-3xl bg-white/5 p-5 shadow-glow-blue">
+                            <p class="text-3xl font-semibold text-white">$1</p>
+                            <p class="mt-2 text-sm text-slate-400">Minimum trade amount</p>
+                        </div>
+                        <div class="rounded-3xl bg-white/5 p-5 shadow-glow-blue">
+                            <p class="text-3xl font-semibold text-white">Unlimited</p>
+                            <p class="mt-2 text-sm text-slate-400">Demo refills & practice mode</p>
+                        </div>
+                        <div class="rounded-3xl bg-white/5 p-5 shadow-glow-blue">
+                            <p class="text-3xl font-semibold text-white">24/7</p>
+                            <p class="mt-2 text-sm text-slate-400">Live support & chat</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid gap-6 md:grid-cols-2">
+                    <article class="glass-panel rounded-3xl p-6 shadow-glow-green">
+                        <h2 class="text-sm font-semibold uppercase text-cyan-300">Referral Offer</h2>
+                        <p class="mt-3 text-sm leading-7 text-slate-300">Invite friends and earn up to 50% lifetime commissions with our affiliate program. Share your link and grow together.</p>
+                        <div class="mt-5 rounded-2xl bg-slate-900/70 p-4 text-sm text-slate-200">
+                            <p class="font-medium text-white">Your referral code:</p>
+                            <p class="mt-2 text-lg font-semibold tracking-wide">PLOP-TRD-2026</p>
+                        </div>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6 shadow-glow-blue">
+                        <h2 class="text-sm font-semibold uppercase text-sky-300">Payment Methods</h2>
+                        <div class="mt-4 grid gap-3 text-sm text-slate-300 sm:grid-cols-2">
+                            <div class="rounded-2xl bg-white/5 p-4">Bank cards</div>
+                            <div class="rounded-2xl bg-white/5 p-4">Crypto deposits</div>
+                            <div class="rounded-2xl bg-white/5 p-4">E-wallets</div>
+                            <div class="rounded-2xl bg-white/5 p-4">Local payments</div>
+                        </div>
+                    </article>
+                </div>
+
+                <section id="market-showcase" class="space-y-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm uppercase tracking-[0.24em] text-sky-300">Market showcase</p>
+                            <h2 class="mt-3 text-2xl font-semibold text-white">Tradable assets across markets</h2>
+                        </div>
+                        <a href="#markets" class="text-sm font-semibold text-sky-300 transition hover:text-cyan-300">View all assets</a>
+                    </div>
+                    <div class="grid gap-4 md:grid-cols-3">
+                        <div class="glass-panel rounded-3xl p-6">
+                            <p class="text-sm uppercase tracking-[0.18em] text-slate-400">Forex</p>
+                            <h3 class="mt-3 text-xl font-semibold text-white">EUR/USD, GBP/USD, USD/JPY</h3>
+                        </div>
+                        <div class="glass-panel rounded-3xl p-6">
+                            <p class="text-sm uppercase tracking-[0.18em] text-slate-400">Crypto</p>
+                            <h3 class="mt-3 text-xl font-semibold text-white">Bitcoin, Ethereum, USDT</h3>
+                        </div>
+                        <div class="glass-panel rounded-3xl p-6">
+                            <p class="text-sm uppercase tracking-[0.18em] text-slate-400">Stocks</p>
+                            <h3 class="mt-3 text-xl font-semibold text-white">Apple, Tesla, Amazon</h3>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <aside class="space-y-8 rounded-[32px] border border-white/10 bg-slate-950/60 p-6 shadow-glow-blue backdrop-blur-xl lg:sticky lg:top-10">
+                <div class="space-y-4 rounded-[28px] bg-slate-900/60 p-6 shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm uppercase tracking-[0.24em] text-cyan-300">Demo account</p>
+                            <p class="mt-2 text-3xl font-semibold text-white">$10,000</p>
+                        </div>
+                        <div class="rounded-3xl bg-emerald-500/20 px-4 py-2 text-sm text-emerald-300">Virtual balance</div>
+                    </div>
+                    <div class="space-y-3 text-sm text-slate-300">
+                        <div class="flex items-center justify-between gap-3 rounded-3xl bg-white/5 p-4">
+                            <span>Min trade</span><strong>$1</strong>
+                        </div>
+                        <div class="flex items-center justify-between gap-3 rounded-3xl bg-white/5 p-4">
+                            <span>Active markets</span><strong>100+</strong>
+                        </div>
+                        <div class="flex items-center justify-between gap-3 rounded-3xl bg-white/5 p-4">
+                            <span>Fast payouts</span><strong>96%</strong>
+                        </div>
+                    </div>
+                    <button onclick="openModal('demo')" class="w-full rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400">Open Demo Account</button>
+                </div>
+
+                <div class="glass-panel rounded-[28px] p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm uppercase tracking-[0.24em] text-sky-300">Trading types</p>
+                            <h3 class="mt-2 text-xl font-semibold text-white">Multiple styles</h3>
+                        </div>
+                        <i class="fa-solid fa-chart-line text-3xl text-sky-300"></i>
+                    </div>
+                    <div class="mt-5 grid gap-3 text-sm text-slate-300 sm:grid-cols-2">
+                        <span class="rounded-2xl bg-white/5 p-3">Binary options</span>
+                        <span class="rounded-2xl bg-white/5 p-3">Digital options</span>
+                        <span class="rounded-2xl bg-white/5 p-3">Quick trades</span>
+                        <span class="rounded-2xl bg-white/5 p-3">Copy trading</span>
+                    </div>
+                </div>
+
+                <div class="rounded-[28px] bg-slate-900/70 p-6">
+                    <h3 class="text-sm uppercase tracking-[0.24em] text-sky-300">Support</h3>
+                    <p class="mt-4 text-sm leading-7 text-slate-300">Need help? Our live chat is available 24/7 to support deposits, withdrawals, account setup, and trading questions.</p>
+                    <button onclick="openModal('support')" class="mt-5 w-full rounded-full bg-blue-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-400">Contact Live Support</button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <section id="dashboard-preview" class="mx-auto max-w-7xl px-6 pb-20 sm:px-8">
+        <div class="grid gap-8 lg:grid-cols-[0.9fr_0.7fr]">
+            <div class="rounded-[32px] border border-white/10 bg-slate-950/70 p-8 shadow-glow-blue backdrop-blur-xl">
+                <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.24em] text-cyan-300">Live dashboard preview</p>
+                        <h2 class="mt-3 text-3xl font-semibold text-white">Your trading room in one glance</h2>
+                    </div>
+                    <button class="rounded-full bg-white/5 px-5 py-3 text-sm text-slate-200 transition hover:bg-white/10">Enter trading room</button>
+                </div>
+                <div class="mt-8 grid gap-6 sm:grid-cols-2">
+                    <div class="rounded-3xl bg-slate-900/80 p-6">
+                        <div class="flex items-center justify-between text-sm text-slate-400">
+                            <span>EUR/USD</span><span class="text-emerald-400">+0.42%</span>
+                        </div>
+                        <div class="mt-4 h-48 rounded-3xl bg-gradient-to-b from-blue-600/20 to-transparent p-4">
+                            <svg viewBox="0 0 360 180" class="h-full w-full" fill="none" stroke="url(#grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <defs>
+                                    <linearGradient id="grad" x1="0" y1="0" x2="360" y2="0">
+                                        <stop offset="0%" stop-color="#38bdf8" />
+                                        <stop offset="100%" stop-color="#06b6d4" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0 130 C40 110 80 80 120 90 C160 100 200 70 240 80 C280 90 320 40 360 55" />
+                            </svg>
+                        </div>
+                        <div class="mt-5 grid gap-3 sm:grid-cols-2">
+                            <button class="rounded-full bg-emerald-500 px-4 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400">Buy</button>
+                            <button class="rounded-full bg-red-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-red-400">Sell</button>
+                        </div>
+                    </div>
+                    <div class="rounded-3xl bg-slate-900/80 p-6">
+                        <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Trade overview</div>
+                        <div class="mt-6 space-y-4 text-sm text-slate-300">
+                            <div class="flex items-center justify-between rounded-3xl bg-white/5 p-4">
+                                <span>Balance</span><strong>$9,820.00</strong>
+                            </div>
+                            <div class="flex items-center justify-between rounded-3xl bg-white/5 p-4">
+                                <span>Open Trades</span><strong>6</strong>
+                            </div>
+                            <div class="flex items-center justify-between rounded-3xl bg-white/5 p-4">
+                                <span>Potential profit</span><strong>$142.80</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-[32px] border border-white/10 bg-slate-950/70 p-8 shadow-glow-blue backdrop-blur-xl">
+                <h3 class="text-sm uppercase tracking-[0.24em] text-cyan-300">Education hub</h3>
+                <p class="mt-3 text-xl font-semibold text-white">Learn trading strategies with tutorials, webinars, and market analysis.</p>
+                <div class="mt-8 space-y-4">
+                    <div class="rounded-3xl bg-slate-900/80 p-5">
+                        <p class="text-sm text-slate-400">Video lesson</p>
+                        <h4 class="mt-2 text-lg font-semibold text-white">Trading indicators explained</h4>
+                    </div>
+                    <div class="rounded-3xl bg-slate-900/80 p-5">
+                        <p class="text-sm text-slate-400">Webinar</p>
+                        <h4 class="mt-2 text-lg font-semibold text-white">Risk management essentials</h4>
+                    </div>
+                    <div class="rounded-3xl bg-slate-900/80 p-5">
+                        <p class="text-sm text-slate-400">Guide</p>
+                        <h4 class="mt-2 text-lg font-semibold text-white">Beginner trading roadmap</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="mx-auto max-w-7xl px-6 pb-20 sm:px-8">
+        <div class="grid gap-10 lg:grid-cols-[0.75fr_1fr]">
+            <div class="space-y-6">
+                <p class="text-sm uppercase tracking-[0.24em] text-sky-300">Platform features</p>
+                <h2 class="text-3xl font-semibold text-white">Everything you need for modern trading.</h2>
+                <p class="max-w-xl text-base leading-7 text-slate-300">From demo accounts to live dashboards and mobile apps, PocketLOption gives traders a complete suite of tools for every market and every style.</p>
+            </div>
+            <div class="grid gap-5 sm:grid-cols-2">
+                <div class="glass-panel rounded-[28px] p-6">
+                    <h3 class="font-semibold text-white">Real-time price charts</h3>
+                    <p class="mt-3 text-sm text-slate-300">Candlesticks, indicators, timeframes, and fullscreen mode for fast decision-making.</p>
+                </div>
+                <div class="glass-panel rounded-[28px] p-6">
+                    <h3 class="font-semibold text-white">Social copy trading</h3>
+                    <p class="mt-3 text-sm text-slate-300">Copy top traders, view leaderboards, and follow public trading feeds.</p>
+                </div>
+                <div class="glass-panel rounded-[28px] p-6">
+                    <h3 class="font-semibold text-white">Deposit & withdrawal</h3>
+                    <p class="mt-3 text-sm text-slate-300">Multiple payment methods, instant processing, and secure withdrawal tracking.</p>
+                </div>
+                <div class="glass-panel rounded-[28px] p-6">
+                    <h3 class="font-semibold text-white">Bonus & loyalty</h3>
+                    <p class="mt-3 text-sm text-slate-300">Deposit bonuses, cashback, VIP status, and tournament rewards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="mx-auto max-w-7xl px-6 pb-20 sm:px-8">
+        <div class="rounded-[32px] border border-white/10 bg-slate-950/70 p-10 shadow-glow-blue backdrop-blur-xl">
+            <div class="grid gap-10 lg:grid-cols-2">
+                <div>
+                    <p class="text-sm uppercase tracking-[0.24em] text-sky-300">FAQ</p>
+                    <h2 class="mt-3 text-3xl font-semibold text-white">Frequently asked questions</h2>
+                    <p class="mt-4 max-w-xl text-base leading-7 text-slate-300">Get quick answers about account setup, deposits, trading and withdrawals.</p>
+                </div>
+                <div class="space-y-4">
+                    <details class="group rounded-3xl bg-white/5 p-5 transition hover:bg-white/10">
+                        <summary class="cursor-pointer text-lg font-semibold text-white">How do I start a demo account?</summary>
+                        <p class="mt-3 text-sm leading-7 text-slate-300">Click "Start Demo Trading", register in seconds with email or social login, then access your virtual balance and simulated markets.</p>
+                    </details>
+                    <details class="group rounded-3xl bg-white/5 p-5 transition hover:bg-white/10">
+                        <summary class="cursor-pointer text-lg font-semibold text-white">What is the minimum deposit?</summary>
+                        <p class="mt-3 text-sm leading-7 text-slate-300">The platform supports a minimum deposit of $5 with multiple payment methods including cards, crypto, and e-wallets.</p>
+                    </details>
+                    <details class="group rounded-3xl bg-white/5 p-5 transition hover:bg-white/10">
+                        <summary class="cursor-pointer text-lg font-semibold text-white">Can I trade with mobile apps?</summary>
+                        <p class="mt-3 text-sm leading-7 text-slate-300">Yes. PocketLOption supports Android, iPhone, and progressive web app access for touch trading and biometric login.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 bg-slate-950/80 px-6 py-12 text-slate-400 sm:px-8">
+        <div class="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.24em] text-sky-300">PocketLOption</p>
+                <p class="mt-4 max-w-md text-sm leading-7">A demo platform prototype for modern binary and copy trading experiences. This is a static website concept only.</p>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-3">
+                <a href="#" class="text-sm transition hover:text-white">Terms</a>
+                <a href="#" class="text-sm transition hover:text-white">Privacy</a>
+                <a href="#" class="text-sm transition hover:text-white">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 px-4 py-6 backdrop-blur-xl">
+        <div class="w-full max-w-2xl rounded-[36px] border border-white/10 bg-slate-900/95 p-8 shadow-glow-blue">
+            <div class="flex items-center justify-between gap-4">
+                <div>
+                    <p id="modal-type" class="text-sm uppercase tracking-[0.24em] text-cyan-300">Demo account</p>
+                    <h2 class="mt-2 text-2xl font-semibold text-white">Open a virtual trading account</h2>
+                </div>
+                <button onclick="closeModal()" class="rounded-2xl bg-white/5 px-4 py-3 text-slate-200 transition hover:bg-white/10"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="mt-8 grid gap-6 lg:grid-cols-2">
+                <div class="space-y-4">
+                    <div class="rounded-3xl bg-white/5 p-5">
+                        <p class="text-sm uppercase tracking-[0.2em] text-slate-400">Quick signup</p>
+                        <p class="mt-3 text-sm leading-7 text-slate-300">Register with email, Google, or Facebook and start trading in seconds.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <label class="block text-sm font-semibold text-slate-200">Email address</label>
+                        <input id="signup-email" type="email" placeholder="you@example.com" class="w-full rounded-3xl px-4 py-3 text-slate-200 outline-none ring-1 ring-white/10 focus:ring-cyan-400" />
+                        <label class="block text-sm font-semibold text-slate-200">Password</label>
+                        <input id="signup-password" type="password" placeholder="Create password" class="w-full rounded-3xl px-4 py-3 text-slate-200 outline-none ring-1 ring-white/10 focus:ring-cyan-400" />
+                        <button onclick="submitSignup()" class="w-full rounded-full bg-blue-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-400">Create account</button>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="rounded-3xl bg-blue-500/10 p-5">
+                        <p class="text-sm uppercase tracking-[0.2em] text-cyan-300">Why choose demo?</p>
+                        <ul class="mt-4 space-y-3 text-sm text-slate-300">
+                            <li>Practice without deposit</li>
+                            <li>Unlimited virtual refills</li>
+                            <li>Real-time market simulation</li>
+                            <li>Full chart and strategy testing</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-3xl bg-white/5 p-5 text-sm text-slate-300">
+                        <p class="font-semibold text-white">Admin access</p>
+                        <p class="mt-2">Use demo mode to preview the platform. For concept testing, try the hidden admin login credentials in the code.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const modalType = document.getElementById('modal-type');
+        function openModal(type) {
+            modalType.innerText = type === 'support' ? 'Live support' : 'Demo account';
+            modal.style.display = 'flex';
+        }
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+        function submitSignup() {
+            const email = document.getElementById('signup-email').value.trim();
+            const password = document.getElementById('signup-password').value.trim();
+            if (!email || !password) {
+                alert('Please enter email and password to continue.');
+                return;
+            }
+            alert('Account created! Demo trading access is ready.');
+            closeModal();
+        }
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modal.style.display === 'flex') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
