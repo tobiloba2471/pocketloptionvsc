@@ -1,0 +1,2 @@
+# pocketloptionvsc
+trading platform 
